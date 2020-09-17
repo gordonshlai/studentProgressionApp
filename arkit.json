@@ -1,0 +1,67 @@
+{
+  "$schema": "https://arkit.pro/schema.json",
+  "components": [
+    {
+      "type": "Entry",
+      "patterns": ["*.js"],
+      "excludePatterns": ["App.js", "babel.config.js"]
+    },
+    {
+      "type": "Component",
+      "patterns": ["app/**/*.js"],
+      "excludePatterns": [
+        "**/__tests__/**",
+        "**/*-test.js",
+        "**/api/**",
+        "**/auth/**",
+        "**/config/**",
+        "**/hooks/**",
+        "**/navigation/**",
+        "**/utility/**"
+      ]
+    }
+  ],
+  "output": {
+    "path": ["try.svg", "try.png"],
+    "groups": [
+      {
+        "first": true,
+        "components": ["Entry"],
+        "patterns": ["App.js"]
+      },
+
+      {
+        "type": "Screens",
+        "patterns": ["app/screens/**"]
+      },
+
+      {
+        "type": "Hooks",
+        "patterns": ["app/hooks/**"]
+      },
+      {
+        "type": "API",
+        "patterns": ["app/api/**"]
+      },
+      {
+        "type": "Authenication",
+        "patterns": ["app/auth/**"]
+      },
+      {
+        "type": "Config",
+        "patterns": ["app/config/**"]
+      },
+      {
+        "type": "Navigation",
+        "patterns": ["app/navigation/**"]
+      },
+      {
+        "type": "Utility",
+        "patterns": ["app/utility/**"]
+      },
+      {
+        "components": ["Component", "Entry"]
+      }
+    ]
+  }
+}
